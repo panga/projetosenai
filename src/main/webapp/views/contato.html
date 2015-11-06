@@ -1,0 +1,19 @@
+<h1>Adiciona Contato</h1>
+Nome: <input type="text" ng-model="contato.nome" /><br/>
+Email: <input type="text" ng-model="contato.email" /><br/>
+Endereco: <input type="text" ng-model="contato.endereco" /><br/>
+Nascimento: <input type="text" ng-model="contato.dataNascimento" /><br/>
+<button class="btn btn-primary" ng-click="gravar()">Gravar</button>
+<button class="btn" ng-click="limpar()">Limpar</button>
+<br />
+<h1>Lista de Contatos</h1>
+<table style="width: 100%">
+    <tr ng-repeat="contato in lista">
+        <td>{{contato.nome}}</td>
+        <td>{{contato.endereco}}</td>
+        <td>{{contato.email}}</td>
+        <td>{{contato.dataNascimento | date:'dd/MM/yyyy'}}</td>
+        <td><button class="btn" ng-click="editar(contato)">Editar</button></td>
+        <td><button class="btn" ng-click="deletar(contato)">Deletar</button></td>
+    </tr>
+</table>
